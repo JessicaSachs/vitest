@@ -94,3 +94,33 @@ await userEvent.click(page.getByRole('button'), {
   timeout: 1_000,
 })
 ```
+
+## Troubleshooting
+
+### Marking `chromium-bidi` as excluded from Vitest
+
+You may see an error like the following if you're using Playwright version 1.48.0 or newer.
+
+```plaintext
+Error: Build failed with 2 errors:
+playwright-core@1.50.0/node_modules/playwright-core/lib/server/bidi/bidiOverCdp.js:7:49: ERROR: Could not resolve "chromium-bidi/lib/cjs/bidiMapper/BidiMapper"
+playwright-core@1.50.0/node_modules/playwright-core/lib/server/bidi/bidiOverCdp.js:8:56: ERROR: Could not resolve "chromium-bidi/lib/cjs/cdp/CdpConnection"
+```
+
+To resolve this error, add `chromium-bidi` to your `optimizeDeps.exclude` array like so:
+
+```ts
+import { defineConfig } from 'vitest/config'
+export default defineConfig({
+  test: {
+    browser: {
+      provider: 'playwright',
+      enabled: true,
+      instances: [{ browser: 'chromium' }],
+    },
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi' /* This is necessary to fix the issue */ ],
+  }
+})
+```

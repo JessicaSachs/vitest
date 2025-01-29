@@ -109,6 +109,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     },
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -136,6 +139,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     }
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -153,6 +159,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     }
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -170,6 +179,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     }
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -187,6 +199,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     }
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -204,6 +219,9 @@ export default defineConfig({
         { browser: 'chromium' },
       ],
     }
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
@@ -351,6 +369,9 @@ export default defineConfig({
       enabled: true,
       headless: true,
     },
+  },
+  optimizeDeps: {
+    exclude: ['chromium-bidi']
   }
 })
 ```
